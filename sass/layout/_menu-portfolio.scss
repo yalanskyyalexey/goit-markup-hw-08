@@ -1,0 +1,36 @@
+.main-menu {
+  display: flex;
+  justify-content: center;
+}
+
+.main-menu__item {
+  margin-bottom: 50px;
+}
+
+.main-menu__item + .main-menu__item {
+  margin-left: 8px;
+}
+
+.main-menu__btn {
+  font-family: $main-font;
+  padding: 6px 22px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.62;
+  color: $title-text;
+  background-color: $section-bacground-color;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+
+  transition: background-color 250ms $main-effects, color 250ms $main-effects;
+
+  &:hover,
+  &:focus {
+    background-color: $accent-color;
+    color: $main-bg-color;
+    outline: none;
+  }
+}

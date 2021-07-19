@@ -1,0 +1,26 @@
+.btn {
+  display: inline-block;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  font-family: $main-font;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+
+  background-color: $accent-color;
+  color: $main-bg-color;
+
+  transition: background-color 250ms $main-effects,
+    box-shadow 250ms $main-effects;
+
+  &:hover,
+  &:focus {
+    background-color: #188ce8;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  }
+}

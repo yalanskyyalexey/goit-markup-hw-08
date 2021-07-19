@@ -1,0 +1,29 @@
+.features-list {
+  display: flex;
+}
+
+.features-list__item {
+  width: 270px;
+}
+
+.features-list__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 120px;
+  margin-bottom: 30px;
+  border-radius: 4px;
+  background-color: $main-bg-color;
+}
+
+.features-list__item:not(:last-child) {
+  margin-right: 30px;
+}
+
+.features-list__suptext {
+  margin-bottom: 10px;
+}
+
+.features-list__description {
+  line-height: 1.71;
+}
