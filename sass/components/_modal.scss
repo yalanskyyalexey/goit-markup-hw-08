@@ -14,11 +14,11 @@
   transition: transform 250ms $main-effects;
   @media screen and (min-width: 480px) {
     width: 450px;
-    height: 609px;
+    height: 650px;
   }
   @media screen and (min-width: 1200px) {
     min-width: 528px;
-    min-height: 581px;
+    height: 600px;
   }
 }
 
@@ -193,11 +193,19 @@
     display: flex;
     align-items: baseline;
   }
+  @media screen and (min-width: 480px) {
+    top: 22%;
+  }
+  @media screen and (min-width: 1200px) {
+    top: 50%;
+  }
 }
 
 .footer-btn-modal {
+  display: block;
   width: 200px;
   padding-left: 56px;
   padding-right: 56px;
   align-self: center;
+  margin-bottom: 40px;
 }
