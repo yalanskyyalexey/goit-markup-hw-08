@@ -1,13 +1,18 @@
 .main-menu {
   display: flex;
-  justify-content: center;
-}
+  flex-wrap: wrap;
+  margin-bottom: 25px;
 
-.main-menu__item {
-  margin-bottom: 50px;
-  & + & {
-    margin-left: 8px;
+  @media screen and (min-width: 768px) {
+    justify-content: center;
   }
+  @media screen and (min-width: 1200px) {
+    justify-content: center;
+    margin-bottom: 50px;
+  }
+}
+.main-menu__item:not(:last-child) {
+  margin-right: 8px;
 }
 
 .main-menu__btn {
@@ -31,11 +36,18 @@
     color: $main-bg-color;
     outline: none;
   }
+  margin-bottom: 15px;
+  @media screen and (min-width: 1200) {
+    margin-bottom: 0;
+  }
 }
 
 .example-card {
   display: flex;
   flex-wrap: wrap;
+  @media screen and (max-width: 479px) {
+    display: unset;
+  }
 }
 
 .example-card_position {
@@ -86,9 +98,29 @@
   }
 }
 
+@media screen and (min-width: 480px) {
+  .example-card__item {
+    flex-basis: calc((100% - 30px) / 1);
+  }
+}
+
+@media screen and (min-width: 767px) {
+  .example-card__item {
+    flex-basis: calc((100% - 60px) / 2);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .example-card__item {
+    flex-basis: calc((100% - 90px) / 3);
+  }
+}
 .example-card__item_position {
   margin-left: 30px;
   margin-bottom: 30px;
+  @media screen and (max-width: 480px) {
+    margin-left: unset;
+  }
 }
 
 .example-card__description {
