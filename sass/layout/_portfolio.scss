@@ -72,6 +72,7 @@
   position: relative;
   pointer-events: none;
   overflow: hidden;
+  flex-shrink: 0;
   &::before {
     position: absolute;
     content: "";
@@ -84,6 +85,9 @@
 }
 
 .example-card__item {
+  display: flex;
+  flex-direction: column;
+
   flex-basis: calc((100% - 90px) / 3);
   transition: box-shadow 250ms $main-effects;
 
@@ -128,6 +132,7 @@
   border-bottom: 1px solid #eeeeee;
   border-left: 1px solid #eeeeee;
   padding: 20px 24px;
+  height: 100%;
 }
 
 .example-card__overlay {

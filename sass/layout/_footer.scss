@@ -6,14 +6,12 @@ footer {
 
 .footer-main {
   display: flex;
-  // align-items: baseline;
-  // align-items: center;
   color: $main-bg-color;
-  @media screen and (min-width: 320px) and (max-width: 767px) {
+  @media screen and (min-width: 320px) and (max-width: 768px) {
     flex-direction: column;
     text-align: center;
   }
-  @media screen and (min-width: 768px) and (max-width: 1199px) {
+  @media screen and (min-width: 768px) and (max-width: 1200px) {
     flex-direction: column;
     // align-items: baseline;
   }
@@ -26,15 +24,19 @@ footer {
 }
 
 .footer-link-wrapper {
-  @media screen and (min-width: 767px) {
+  @media screen and (min-width: 768px) {
     display: flex;
     justify-content: space-around;
   }
 }
 
 .footer-main__left {
-  @media screen and (min-width: 767px) {
+  @media screen and (min-width: 768px) {
     margin-right: 90px;
+    text-align: center;
+  }
+  @media screen and (min-width: 1200px) {
+    text-align: unset;
   }
 }
 
