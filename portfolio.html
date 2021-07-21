@@ -18,7 +18,6 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="./css/styles.css" />
     <link rel="stylesheet" href="./css/main.min.css" />
   </head>
   <body>
@@ -45,6 +44,18 @@
             </li>
           </ul>
         </nav>
+        <button type="button" class="burger-btn" data-menu-button>
+          <svg
+            width="40"
+            height="40"
+            aria-label="Переключатель мобильного меню"
+          >
+            <use
+              class="menu-button__icon_menu"
+              href="./images/sprite.svg#icon-menu"
+            ></use>
+          </svg>
+        </button>
         <ul class="top-contacts">
           <li class="top-contacts__item">
             <a class="top-contacts__link" href="mailto:info@devstudio.com">
@@ -71,6 +82,56 @@
             >
           </li>
         </ul>
+        <div class="mobile-menu" data-menu>
+          <button type="button" class="mobile-menu-close-btn" data-menu-close>
+            <svg class="mobile-menu-close-icon" width="40" height="40">
+              <use href="./images/sprite.svg#icon-menu-close"></use>
+            </svg>
+          </button>
+          <ul class="mobile-menu__list">
+            <li class="mobile-menu__item">
+              <a href="./index.html" class="mobile-menu__link">Студия</a>
+            </li>
+            <li class="mobile-menu__item">
+              <a
+                href="./portfolio.html"
+                class="mobile-menu__link mobile-menu__link-active"
+                >Портфолио</a
+              >
+            </li>
+            <li class="mobile-menu__item">
+              <a href="" class="mobile-menu__link">Контакты</a>
+            </li>
+          </ul>
+          <div>
+            <ul class="mobile-menu__contact-list">
+              <li class="mobile-menu__contact-item">
+                <a href="tel:+380961111111" class="mobile-menu__tel-link">
+                  +38 096 111 11 11
+                </a>
+              </li>
+              <li class="mobile-menu__contact-item">
+                <a href="mailto:info@devstudio.com" class="mobile-menu__mail">
+                  info@devstudio.com
+                </a>
+              </li>
+            </ul>
+            <ul class="mobile-menu__social-list">
+              <li class="mobile-menu__social-list-item">
+                <a href="#" class="mobile-social-list__link"> Instagram </a>
+              </li>
+              <li class="mobile-menu__social-list-item">
+                <a href="#" class="mobile-social-list__link link"> Twitter </a>
+              </li>
+              <li class="mobile-menu__social-list-item">
+                <a href="#" class="mobile-social-list__link"> Facebook </a>
+              </li>
+              <li class="mobile-menu__social-list-item">
+                <a href="#" class="mobile-social-list__link"> LinkedIn </a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </header>
     <!-- main -->
@@ -109,19 +170,37 @@
                   шпионажа и атак на защищённые сервера конкурентов.
                 </p>
               </div>
-              <img
-                class="example-img"
-                src="./images/portfolio/tehno.jpg"
-                alt="Технокряк"
-                width="370"
-                height="294"
-              />
+              <picture>
+                <source
+                  srcset="
+                    ./images/desktop/portfolio/tehno.jpg   1x,
+                    ./images/desktop/portfolio/tehno2x.jpg 2x
+                  "
+                  media="(min-width: 1200px)"
+                />
+                <source
+                  srcset="
+                    ./images/tablet/portfolio-tablet/imgp1.jpg    1x,
+                    ./images/tablet/portfolio-tablet/img@2xp1.jpg 2x
+                  "
+                  media="(min-width: 768px)"
+                />
+                <source
+                  srcset="
+                    ./images/mobile/portfolio-mobile/imgp1.jpg    1x,
+                    ./images/mobile/portfolio-mobile/img@2xp1.jpg 2x
+                  "
+                  media="(max-width: 768px)"
+                />
+                <img
+                  class="portfolio-member-card__image"
+                  src="./images/desktop/portfolio/tehno.jpg"
+                  alt="Технокряк"
+                />
+              </picture>
             </div>
-            <!-- example-card__description -->
             <div class="example-card__description">
-              <!-- example-card__title -->
               <h2 class="example-card__title">Технокряк</h2>
-              <!-- example-card__text -->
               <p class="example-card__text">Веб-сайт</p>
             </div>
           </li>
@@ -135,13 +214,34 @@
                   шпионажа и атак на защищённые сервера конкурентов.
                 </p>
               </div>
-              <img
-                class="example-img"
-                src="./images/portfolio/orlean.jpg"
-                alt="Постер New Orlean vs Golden Star"
-                width="370"
-                height="294"
-              />
+              <picture>
+                <source
+                  srcset="
+                    ./images/desktop/portfolio/orlean.jpg   1x,
+                    ./images/desktop/portfolio/orlean2x.jpg 2x
+                  "
+                  media="(min-width: 1200px)"
+                />
+                <source
+                  srcset="
+                    ./images/tablet/portfolio-tablet/img2p.jpg    1x,
+                    ./images/tablet/portfolio-tablet/img@2x2p.jpg 2x
+                  "
+                  media="(min-width: 768px)"
+                />
+                <source
+                  srcset="
+                    ./images/mobile/portfolio-mobile/imgp2.jpg    1x,
+                    ./images/mobile/portfolio-mobile/img@2xp2.jpg 2x
+                  "
+                  media="(max-width: 768px)"
+                />
+                <img
+                  class="portfolio-member-card__image"
+                  src="./images/desktop/portfolio/orlean.jpg"
+                  alt="Постер New Orlean vs Golden Star"
+                />
+              </picture>
             </div>
             <div class="example-card__description">
               <h2 class="example-card__title">
@@ -159,13 +259,34 @@
                   шпионажа и атак на защищённые сервера конкурентов.
                 </p>
               </div>
-              <img
-                class="example-img"
-                src="./images/portfolio/seafood.jpg"
-                alt="Ресторан Seafood"
-                width="370"
-                height="294"
-              />
+              <picture>
+                <source
+                  srcset="
+                    ./images/desktop/portfolio/seafood.jpg   1x,
+                    ./images/desktop/portfolio/seafood2x.jpg 2x
+                  "
+                  media="(min-width: 1200px)"
+                />
+                <source
+                  srcset="
+                    ./images/tablet/portfolio-tablet/img3p.jpg    1x,
+                    ./images/tablet/portfolio-tablet/img@2x3p.jpg 2x
+                  "
+                  media="(min-width: 768px)"
+                />
+                <source
+                  srcset="
+                    ./images/mobile/portfolio-mobile/imgp3.jpg    1x,
+                    ./images/mobile/portfolio-mobile/img@2xp3.jpg 2x
+                  "
+                  media="(max-width: 768px)"
+                />
+                <img
+                  class="portfolio-member-card__image"
+                  src="./images/desktop/portfolio/seafood.jpg"
+                  alt="Ресторан Seafood"
+                />
+              </picture>
             </div>
             <div class="example-card__description">
               <h2 class="example-card__title">Ресторан Seafood</h2>
@@ -181,13 +302,34 @@
                   шпионажа и атак на защищённые сервера конкурентов.
                 </p>
               </div>
-              <img
-                class="example-img"
-                src="./images/portfolio/prime.jpg"
-                alt="Проект Prime"
-                width="370"
-                height="294"
-              />
+              <picture>
+                <source
+                  srcset="
+                    ./images/desktop/portfolio/prime.jpg   1x,
+                    ./images/desktop/portfolio/prime2x.jpg 2x
+                  "
+                  media="(min-width: 1200px)"
+                />
+                <source
+                  srcset="
+                    ./images/tablet/portfolio-tablet/img4p.jpg    1x,
+                    ./images/tablet/portfolio-tablet/img@2x4p.jpg 2x
+                  "
+                  media="(min-width: 768px)"
+                />
+                <source
+                  srcset="
+                    ./images/mobile/portfolio-mobile/imgp4.jpg    1x,
+                    ./images/mobile/portfolio-mobile/img@2xp4.jpg 2x
+                  "
+                  media="(max-width: 768px)"
+                />
+                <img
+                  class="portfolio-member-card__image"
+                  src="./images/desktop/portfolio/prime.jpg"
+                  alt="Проект Prime"
+                />
+              </picture>
             </div>
             <div class="example-card__description">
               <h2 class="example-card__title">Проект Prime</h2>
@@ -203,13 +345,34 @@
                   шпионажа и атак на защищённые сервера конкурентов.
                 </p>
               </div>
-              <img
-                class="example-img"
-                src="./images/portfolio/boxes.jpg"
-                alt="Проект Boxes"
-                width="370"
-                height="294"
-              />
+              <picture>
+                <source
+                  srcset="
+                    ./images/desktop/portfolio/boxes.jpg   1x,
+                    ./images/desktop/portfolio/boxes2x.jpg 2x
+                  "
+                  media="(min-width: 1200px)"
+                />
+                <source
+                  srcset="
+                    ./images/tablet/portfolio-tablet/img5p.jpg    1x,
+                    ./images/tablet/portfolio-tablet/img@2x5p.jpg 2x
+                  "
+                  media="(min-width: 768px)"
+                />
+                <source
+                  srcset="
+                    ./images/mobile/portfolio-mobile/imgp5.jpg    1x,
+                    ./images/mobile/portfolio-mobile/img@2xp5.jpg 2x
+                  "
+                  media="(max-width: 768px)"
+                />
+                <img
+                  class="portfolio-member-card__image"
+                  src="./images/desktop/portfolio/boxes.jpg"
+                  alt="Проект Boxes"
+                />
+              </picture>
             </div>
             <div class="example-card__description">
               <h2 class="example-card__title">Проект Boxes</h2>
@@ -225,13 +388,34 @@
                   шпионажа и атак на защищённые сервера конкурентов.
                 </p>
               </div>
-              <img
-                class="example-img"
-                src="./images/portfolio/inspiration.jpg"
-                alt="Inspiration has no Borders"
-                width="370"
-                height="294"
-              />
+              <picture>
+                <source
+                  srcset="
+                    ./images/desktop/portfolio/inspiration.jpg   1x,
+                    ./images/desktop/portfolio/inspiration2x.jpg 2x
+                  "
+                  media="(min-width: 1200px)"
+                />
+                <source
+                  srcset="
+                    ./images/tablet/portfolio-tablet/img6p.jpg    1x,
+                    ./images/tablet/portfolio-tablet/img@2x6p.jpg 2x
+                  "
+                  media="(min-width: 768px)"
+                />
+                <source
+                  srcset="
+                    ./images/mobile/portfolio-mobile/imgp6.jpg    1x,
+                    ./images/mobile/portfolio-mobile/img@2xp6.jpg 2x
+                  "
+                  media="(max-width: 768px)"
+                />
+                <img
+                  class="portfolio-member-card__image"
+                  src="./images/desktop/portfolio/inspiration.jpg"
+                  alt="Inspiration has no Borders"
+                />
+              </picture>
             </div>
             <div class="example-card__description">
               <h2 class="example-card__title">Inspiration has no Borders</h2>
@@ -247,13 +431,34 @@
                   шпионажа и атак на защищённые сервера конкурентов.
                 </p>
               </div>
-              <img
-                class="example-img"
-                src="./images/portfolio/limited.jpg"
-                alt="Издание Limited Edition"
-                width="370"
-                height="294"
-              />
+              <picture>
+                <source
+                  srcset="
+                    ./images/desktop/portfolio/limited.jpg   1x,
+                    ./images/desktop/portfolio/limited2x.jpg 2x
+                  "
+                  media="(min-width: 1200px)"
+                />
+                <source
+                  srcset="
+                    ./images/tablet/portfolio-tablet/img7p.jpg    1x,
+                    ./images/tablet/portfolio-tablet/img@2x7p.jpg 2x
+                  "
+                  media="(min-width: 768px)"
+                />
+                <source
+                  srcset="
+                    ./images/mobile/portfolio-mobile/imgp7.jpg    1x,
+                    ./images/mobile/portfolio-mobile/img@2xp7.jpg 2x
+                  "
+                  media="(max-width: 768px)"
+                />
+                <img
+                  class="portfolio-member-card__image"
+                  src="./images/desktop/portfolio/limited.jpg"
+                  alt="Издание Limited Edition"
+                />
+              </picture>
             </div>
             <div class="example-card__description">
               <h2 class="example-card__title">Издание Limited Edition</h2>
@@ -269,13 +474,34 @@
                   шпионажа и атак на защищённые сервера конкурентов.
                 </p>
               </div>
-              <img
-                class="example-img"
-                src="./images/portfolio/lab.jpg"
-                alt="Проект LAB"
-                width="370"
-                height="294"
-              />
+              <picture>
+                <source
+                  srcset="
+                    ./images/desktop/portfolio/lab.jpg   1x,
+                    ./images/desktop/portfolio/lab2x.jpg 2x
+                  "
+                  media="(min-width: 1200px)"
+                />
+                <source
+                  srcset="
+                    ./images/tablet/portfolio-tablet/img8p.jpg    1x,
+                    ./images/tablet/portfolio-tablet/img@2x8p.jpg 2x
+                  "
+                  media="(min-width: 768px)"
+                />
+                <source
+                  srcset="
+                    ./images/mobile/portfolio-mobile/imgp8.jpg    1x,
+                    ./images/mobile/portfolio-mobile/img@2xp8.jpg 2x
+                  "
+                  media="(max-width: 768px)"
+                />
+                <img
+                  class="portfolio-member-card__image"
+                  src="./images/desktop/portfolio/lab.jpg"
+                  alt="Проект LAB"
+                />
+              </picture>
             </div>
             <div class="example-card__description">
               <h2 class="example-card__title">Проект LAB</h2>
@@ -291,13 +517,34 @@
                   шпионажа и атак на защищённые сервера конкурентов.
                 </p>
               </div>
-              <img
-                class="example-img"
-                src="./images/portfolio/growing.jpg"
-                alt="Growing Business"
-                width="370"
-                height="294"
-              />
+              <picture>
+                <source
+                  srcset="
+                    ./images/desktop/portfolio/growing.jpg   1x,
+                    ./images/desktop/portfolio/growing2x.jpg 2x
+                  "
+                  media="(min-width: 1200px)"
+                />
+                <source
+                  srcset="
+                    ./images/tablet/portfolio-tablet/img9p.jpg    1x,
+                    ./images/tablet/portfolio-tablet/img@2x9p.jpg 2x
+                  "
+                  media="(min-width: 768px)"
+                />
+                <source
+                  srcset="
+                    ./images/mobile/portfolio-mobile/imgp9.jpg    1x,
+                    ./images/mobile/portfolio-mobile/img@2xp9.jpg 2x
+                  "
+                  media="(max-width: 768px)"
+                />
+                <img
+                  class="portfolio-member-card__image"
+                  src="./images/desktop/portfolio/growing.jpg"
+                  alt="Growing Business"
+                />
+              </picture>
             </div>
             <div class="example-card__description">
               <h2 class="example-card__title">Growing Business</h2>
@@ -311,96 +558,98 @@
     <footer>
       <div class="container">
         <div class="footer-main">
-          <div class="footer-main__left">
-            <a class="footer-logo footer-main__logo" href="./index.html"
-              ><span class="logo__color_accent">Web</span>Studio</a
-            >
-            <address>
-              <a
-                class="footer-location__link link_position"
-                href="https://goo.gl/maps/7Ep2g2B2rvwe2ufp7"
-                target="_blank"
-                rel="noreferrer noopener"
+          <div class="footer-link-wrapper">
+            <div class="footer-main__left">
+              <a class="footer-logo footer-main__logo" href="./index.html"
+                ><span class="logo__color_accent">Web</span>Studio</a
               >
-                г. Киев, пр-т Леси Украинки, 26</a
-              >
-              <ul class="footer-location__list">
-                <li>
-                  <a
-                    class="footer-location__link link_color link_position"
-                    href="mailto:info@example.com"
-                    >info@example.com</a
-                  >
+              <address>
+                <a
+                  class="footer-location__link link_position"
+                  href="https://goo.gl/maps/7Ep2g2B2rvwe2ufp7"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  г. Киев, пр-т Леси Украинки, 26</a
+                >
+                <ul class="footer-location__list">
+                  <li>
+                    <a
+                      class="footer-location__link link_color link_position"
+                      href="mailto:info@example.com"
+                      >info@example.com</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="footer-location__link link_color link_position"
+                      href="tel:+380991111111"
+                      >+38 099 111 11 11</a
+                    >
+                  </li>
+                </ul>
+              </address>
+            </div>
+            <div class="footer-soc">
+              <b class="footer-soc__title title_position">Присоединяйтесь</b>
+              <ul class="social-list footer-soc__list">
+                <li
+                  class="
+                    footer-soc__item
+                    social-list__item social-list__item_position
+                    footer-soc__item_position
+                  "
+                >
+                  <a href="" class="social-list__link">
+                    <svg class="social-list__icon social-list__icon_color">
+                      <use href="./images/sprite.svg#icon-instagram"></use>
+                    </svg>
+                  </a>
                 </li>
-                <li>
-                  <a
-                    class="footer-location__link link_color link_position"
-                    href="tel:+380991111111"
-                    >+38 099 111 11 11</a
-                  >
+                <li
+                  class="
+                    footer-soc__item
+                    social-list__item social-list__item_position
+                    footer-soc__item_position
+                  "
+                >
+                  <a href="" class="social-list__link">
+                    <svg class="social-list__icon social-list__icon_color">
+                      <use href="./images/sprite.svg#icon-twitter"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li
+                  class="
+                    footer-soc__item
+                    social-list__item social-list__item_position
+                    footer-soc__item_position
+                  "
+                >
+                  <a href="" class="social-list__link">
+                    <svg class="social-list__icon social-list__icon_color">
+                      <use href="./images/sprite.svg#icon-facebook"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li
+                  class="
+                    footer-soc__item
+                    social-list__item social-list__item_position
+                    footer-soc__item_position
+                  "
+                >
+                  <a href="" class="social-list__link">
+                    <svg class="social-list__icon social-list__icon_color">
+                      <use href="./images/sprite.svg#icon-linkedin"></use>
+                    </svg>
+                  </a>
                 </li>
               </ul>
-            </address>
+            </div>
           </div>
 
-          <div class="footer-soc">
-            <b class="footer-soc__title title_position">Присоединяйтесь</b>
-            <ul class="social-list footer-soc__list">
-              <li
-                class="
-                  footer-soc__item
-                  social-list__item social-list__item_position
-                  footer-soc__item_position
-                "
-              >
-                <a href="" class="social-list__link">
-                  <svg class="social-list__icon social-list__icon_color">
-                    <use href="./images/sprite.svg#icon-instagram"></use>
-                  </svg>
-                </a>
-              </li>
-              <li
-                class="
-                  footer-soc__item
-                  social-list__item social-list__item_position
-                  footer-soc__item_position
-                "
-              >
-                <a href="" class="social-list__link">
-                  <svg class="social-list__icon social-list__icon_color">
-                    <use href="./images/sprite.svg#icon-twitter"></use>
-                  </svg>
-                </a>
-              </li>
-              <li
-                class="
-                  footer-soc__item
-                  social-list__item social-list__item_position
-                  footer-soc__item_position
-                "
-              >
-                <a href="" class="social-list__link">
-                  <svg class="social-list__icon social-list__icon_color">
-                    <use href="./images/sprite.svg#icon-facebook"></use>
-                  </svg>
-                </a>
-              </li>
-              <li
-                class="
-                  footer-soc__item
-                  social-list__item social-list__item_position
-                  footer-soc__item_position
-                "
-              >
-                <a href="" class="social-list__link">
-                  <svg class="social-list__icon social-list__icon_color">
-                    <use href="./images/sprite.svg#icon-linkedin"></use>
-                  </svg>
-                </a>
-              </li>
-            </ul>
-          </div>
-
+          <!-- footer-right -->
           <div class="footer-right">
             <b class="footer-right__title title_position"
               >Подпишитесь на рассылку</b
@@ -413,7 +662,7 @@
                 placeholder="E-mail"
               />
               <button class="footer-btn btn" type="submit">
-                Подписаться<svg class="footer-btn__icon">
+                Подписаться<svg class="footer-btn__icon" width="24" height="24">
                   <use href="./images/sprite.svg#icon-send"></use>
                 </svg>
               </button>
@@ -422,5 +671,7 @@
         </div>
       </div>
     </footer>
+    <script src="./js/modal.js" defer></script>
+    <script src="./js/mobile-menu.js" defer></script>
   </body>
 </html>

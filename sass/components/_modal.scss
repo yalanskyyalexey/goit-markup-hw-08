@@ -1,7 +1,7 @@
 .modal {
   position: absolute;
-  min-width: 528px;
-  min-height: 581px;
+  width: 100vw;
+  max-height: 100vh;
   top: 50%;
   left: 50%;
 
@@ -12,6 +12,14 @@
   background-color: $main-bg-color;
   transform: translate(-50%, -50%) scale(1);
   transition: transform 250ms $main-effects;
+  @media screen and (min-width: 480px) {
+    width: 450px;
+    height: 609px;
+  }
+  @media screen and (min-width: 1200px) {
+    min-width: 528px;
+    min-height: 581px;
+  }
 }
 
 .modal-close {
@@ -52,11 +60,10 @@
 
 .modal-form__title {
   font-size: 20px;
-  line-height: 1.15;
   text-align: center;
   width: 100%;
   font-weight: 700;
-  line-height: 1.15;
+  line-height: 1.5;
   letter-spacing: 0.03em;
   color: $title-text;
 }
@@ -121,12 +128,22 @@
   border-radius: 4px;
   color: rgba(117, 117, 117, 0.5);
   transition: border-color 250ms $main-effects;
+
+  &:hover,
+  &:focus {
+    outline: none;
+    border-color: $accent-color;
+  }
 }
 
 .modal-form-check {
   position: relative;
   line-height: 1.71;
   padding-left: 36px;
+  @media screen and (min-width: 320px) and (max-width: 480px) {
+    font-size: 11px;
+    line-height: 1.17;
+  }
 }
 
 .modal-form-check a {
@@ -172,6 +189,10 @@
   border: 2px solid $title-text;
   border-color: $title-text;
   transform: translateY(-50%);
+  @media screen and (min-width: 320px) {
+    display: flex;
+    align-items: baseline;
+  }
 }
 
 .footer-btn-modal {
