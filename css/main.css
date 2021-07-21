@@ -1092,6 +1092,7 @@ header {
   position: relative;
   pointer-events: none;
   overflow: hidden;
+  flex-shrink: 0;
 }
 
 .example-card__wrapper::before {
@@ -1104,6 +1105,8 @@ header {
 }
 
 .example-card__item {
+  display: flex;
+  flex-direction: column;
   flex-basis: calc((100% - 90px) / 3);
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -1151,6 +1154,7 @@ header {
   border-bottom: 1px solid #eeeeee;
   border-left: 1px solid #eeeeee;
   padding: 20px 24px;
+  height: 100%;
 }
 
 .example-card__overlay {
@@ -1187,14 +1191,14 @@ footer {
   color: #ffffff;
 }
 
-@media screen and (min-width: 320px) and (max-width: 767px) {
+@media screen and (min-width: 320px) and (max-width: 768px) {
   .footer-main {
     flex-direction: column;
     text-align: center;
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1199px) {
+@media screen and (min-width: 768px) and (max-width: 1200px) {
   .footer-main {
     flex-direction: column;
   }
@@ -1206,16 +1210,23 @@ footer {
   }
 }
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   .footer-link-wrapper {
     display: flex;
     justify-content: space-around;
   }
 }
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   .footer-main__left {
     margin-right: 90px;
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .footer-main__left {
+    text-align: unset;
   }
 }
 
